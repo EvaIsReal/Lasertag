@@ -1,0 +1,15 @@
+name: ItGame
+version: '${project.version}'
+main: de.iv.itgame.core.Main
+api-version: 1.19
+prefix: ITGame
+authors: [ Iv ]
+description: A fucking great game
+website: N/A
+commands:
+  givegun:
+    description: Gives a gun
+  spawn:
+    description: Spawns an entity
+  sphere:
+  debug:

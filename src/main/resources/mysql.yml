@@ -1,0 +1,5 @@
+host: localhost
+database: my-database
+user: root
+password: my-password
+port: 3306
