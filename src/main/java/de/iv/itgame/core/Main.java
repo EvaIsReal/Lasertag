@@ -47,22 +47,7 @@ public final class Main extends JavaPlugin {
         DataManager dataManager = new DataManager();
         CosmeticHandler cosmeticHandler = new CosmeticHandler();
         FileManager.setup();
-        try {
-            settings = FileManager.getConfig("settings.yml");
-        } catch (IOException | InvalidConfigurationException e) {
-            e.printStackTrace();
-        }
-        if (settings.getBoolean("useMysql")) storageMethod = "mysql";
-        else storageMethod = "sqlite";
-
-
-        switch (storageMethod) {
-            case "mysql" -> {
-                Mysql mysql = new Mysql().connect();
-                mysql.init();
-            }
-            case "sqlite" -> SQLite.init();
-        }
+        SQLite.init();
 
 
         registerCommands();

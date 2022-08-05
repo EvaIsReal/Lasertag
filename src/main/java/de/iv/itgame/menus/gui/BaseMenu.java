@@ -43,7 +43,7 @@ public class BaseMenu extends Menu {
                 case "shop" -> MenuManager.openMenu(ShopMenu.class, p);
                 case "inv" -> MenuManager.openMenu(GameInventory.class, p);
             }
-        } catch (Exception ex) {ex.printStackTrace();}
+        } catch (Exception ignored) {}
 
     }
 
