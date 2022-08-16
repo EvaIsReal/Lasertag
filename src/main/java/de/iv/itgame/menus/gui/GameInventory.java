@@ -25,7 +25,9 @@ public class GameInventory extends Menu {
 
     @Override
     public void handleMenu(InventoryClickEvent e) {
+        if(e.getCurrentItem().getType() != super.FILLER_GLASS.getType()) {
 
+        }
     }
 
     @Override

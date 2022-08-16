@@ -19,10 +19,12 @@ public class DebugCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        if(sender instanceof Player p) {
+        if(sender instanceof Player p && args[0].equals("inv")) {
             MenuManager.openMenu(BaseMenu.class, p);
             p.sendMessage(Arrays.toString(Uni.getPlayerInventoryItems(p.getUniqueId().toString())));
         }
+
+
         /*if(args[0].equals("inv") && args[1] != null && sender instanceof Player p) {
             p.sendMessage(String.valueOf(Uni.getPersistentPlayerData(Bukkit.getPlayer(args[1]).getUniqueId().toString()).toMap()));
         }*/

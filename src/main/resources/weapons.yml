@@ -1,0 +1,6 @@
+WeaponName:
+  Material: WOODEN_HOE
+  Key: default
+  cost: n
+  xpDrain: 10
+  Ability:

@@ -8,6 +8,7 @@ public class CosmeticHandler {
 
     public CosmeticHandler() {
         cosmetics.add(new LoveCosmetic());
+        cosmetics.add(new DefaultCosmetic());
     }
 
     public static Cosmetic getCosmetic(String identifier) {

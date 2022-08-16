@@ -13,8 +13,10 @@
 
     <description>A fucking great game</description>
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
     <url>N/A</url>
 
@@ -22,12 +24,10 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.3.1</version>
                 <configuration>
-                    <outputDirectory>C:\Users\thoiv\Desktop\MC Server\Bungee\server#1 1.19 [25567]\plugins</outputDirectory>
-                    <source>16</source>
-                    <target>16</target>
+                    <outputDirectory>C:/Users/thoiv/Desktop/MC Server/Bungee/server#1 1.19 [25567]/plugins</outputDirectory>
                 </configuration>
             </plugin>
             <plugin>

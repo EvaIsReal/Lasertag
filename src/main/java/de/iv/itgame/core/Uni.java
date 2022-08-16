@@ -246,6 +246,29 @@ public class Uni {
         return inventoryItems;
     }
 
+    public static String[] inventoryItemsToString(InventoryItem[] inventoryItems) {
+        String[] ret = new String[inventoryItems.length];
+        for (int i = 0; i < inventoryItems.length; i++) {
+            ret[i] = inventoryItems[i].getItemIdentifier();
+        }
+        return ret;
+    }
+
+    public static void setPlayerInventoryItems(String uuid, InventoryItem[] inventoryItems) {
+        PlayerData data = getPersistentPlayerData(uuid);
+        data.setInventoryItemData(inventoryItemsToString(inventoryItems));
+        data.store();
+    }
+
+    public static void addPlayerInventoryItem(String uuid, InventoryItem item) {
+        InventoryItem[] inventoryItems = getPlayerInventoryItems(uuid);
+        InventoryItem[] arr = new InventoryItem[inventoryItems.length+1];
+        for (int i = 0; i < arr.length; i++) inventoryItems[i] = arr[i];
+        item = arr[inventoryItems.length+1];
+
+        setPlayerInventoryItems(uuid, arr);
+    }
+
     public static InventoryItem getInventoryItemFromId(String identifier) {
         for (InventoryItem item : getExistingInventoryItems()) {
             if(item.getItemIdentifier().equals(identifier)) return item;
